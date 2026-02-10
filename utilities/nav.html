@@ -1,0 +1,34 @@
+<base href="/OSIRIS-AquiLLM-Website/">
+
+<nav class="container">
+    <a href="index.html" class="logo-container">
+        <span class="logo-text">AquiLLM</span>
+    </a>
+    <button id="hamburger" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="technologies.html">Technologies</a></li>
+        <li><a href="team.html">Team</a></li>
+    </ul>
+</nav>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+    
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
+    });
+</script>
