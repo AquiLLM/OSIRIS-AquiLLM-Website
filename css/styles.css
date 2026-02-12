@@ -669,7 +669,9 @@ footer {
 }
 
 .avatar-adjust {
-    transform: translateX(15px) !important;
+    object-fit: cover !important;
+    object-position: 70% 50% !important;
+    overflow: hidden !important;
 }
 
 .name {
