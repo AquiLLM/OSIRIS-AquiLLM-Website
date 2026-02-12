@@ -668,6 +668,10 @@ footer {
     display: block;
 }
 
+.avatar-adjust {
+    object-position: 35% center;
+}
+
 .name {
     font-size: 24px;
     font-weight: 700;
