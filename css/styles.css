@@ -660,7 +660,7 @@ footer {
 .avatar {
     width: 84px;
     height: 84px;
-    border-radius: 50%;
+    border-radius: 8px;
     border: 2px solid #404040;
     object-fit: cover;
     margin-bottom: 16px;
@@ -669,9 +669,7 @@ footer {
 }
 
 .avatar-adjust {
-    object-fit: cover !important;
-    object-position: 70% 50% !important;
-    overflow: hidden !important;
+    object-position: 65% center;
 }
 
 .name {
