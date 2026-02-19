@@ -1,51 +1,67 @@
-<base href="/OSIRIS-AquiLLM-Website/">
 <!DOCTYPE html>
+<!-- <base href="/OSIRIS-AquiLLM-Website/"> -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSIRIS AquiLLM Capstone 2026</title>
+    <title>Capstone 2026 | AquiLLM</title>
     <link rel="icon" type="image/x-icon" href="images/aquila.svg">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <header id="navbar"></header>
-    <script>
-        fetch('./utilities/nav.html')
-            .then(response => response.text())
-            .then(html => document.getElementById('navbar').innerHTML = html);
-    </script>
 
-    <main class="container">
-        <section class="hero">
-            <div class="hero-background"></div>
-            <div class="hero-content">
-                <h1>OSIRIS AquiLLM Capstone 2026</h1>
-                <p>A Tool for Preserving Knowledge in Research Groups</p>
+    <section class="hero">
+        <div class="container">
+            <h1>AquiLLM Capstone 2026</h1>
+        </div>
+    </section>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Team Members</h2>
+                <div class="grid">
+                    <div class="card">
+                        <img class="avatar" src="images/team1.jpg" alt="Team member 1">
+                        <div class="name">Tee Grant</div>
+                        <p class="bio">
+                            Tee's rocking bio
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <img class="avatar avatar-adjust" src="images/jacob.jpg" alt="Team member 2">
+                        <div class="name">Jacob Nowack</div>
+                        <p class="bio">
+                            Jacob is a Computer Science student at Southern Oregon University set to graduate in Spring 2026. He has worked closely with Bernie Boscoe and the UCLA Astrophysics Datalab on AI-driven Astronomy projects, exploring the intersection of machine learning and astrophysics. Outside of tech, he enjoys hiking and classic rock n' roll.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <img class="avatar" src="images/jackson.jpg" alt="Team member 3">
+                        <div class="name">Jackson Godsey</div>
+                        <p class="bio">
+                            Jackson is a Computer Science student at Southern Oregon University, and is set to graduate June 2026. They have worked in step with the UCLA Astrophysics Datalab and Professor Bernie Boscoe on AquiLLM, and are especially interested in Data Analytics. In their free time, they like to read and listen to Billy Joel.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <div class="client-info">
-            <p><strong>Our Team:</strong> Bernie Boscoe, Chandler Campbell, in conjunction with the UCLA Astrophysics Datalab. They have built a promising AI tool called AquiLLM, and they are excited to see us further develop and improve it.</p>
-        </div>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Where We Come In</h2>
+                <div class="about-content">
+                    <p>AquiLLM is a work in progress and is often used with local models which can be prone to hallucinations. Therefore, being able to rate AquiLLM's responses is an important step in understanding which situations the tool falters and what areas could use fine tuning.</p>
 
-        <div class="problem-section">
-            <h2>What is AquiLLM?</h2>
-            <p>AquiLLM is an AI chatbot built specifically for research groups to preserve and access knowledge. It allows users to upload various document types from research papers to meeting notes and query them using natural language. With robust privacy options supporting both cloud-based and offline local models, AquiLLM helps research teams maintain institutional knowledge and onboard new members more effectively.</p>
+                    <h3>The Current Challenge</h3>
+                    <p>There is an existing rating system in place where users can give numerical ratings from 1-5 on each of AquiLLM's responses, however the system is incomplete. The ratings are not stored in the database properly, and there is no other feedback system aside from the basic 1-5 rating scale (no functionality to allow the users to explain which part of the response was wrong).</p>
 
-            <p>This is a page for the Capstone 2026 OSIRIS AquiLLM Project. For more information on the broader AquiLLM Project, please see AquiLLM's official website here: <a href="https://aquillm.org/" target="_blank">https://aquillm.org/</a></p>
-        </div>
-
-        <div class="problem-section highlight-section">
-            <h2>Where We Come In</h2>
-            <p>AquiLLM is a work in progress and is often used with local models which can be prone to hallucinations. Therefore, being able to rate AquiLLM's responses is an important step in understanding which situations the tool falters and what areas could use fine tuning.</p>
-
-            <h3>The Current Challenge</h3>
-            <p>There is an existing rating system in place where users can give numerical ratings from 1-5 on each of AquiLLM's responses, however the system is incomplete. The ratings are not stored anywhere outside the conversation, and there is no other feedback system aside from the basic 1-5 rating scale (no functionality to allow the users to explain which part of the response was wrong).</p>
-
-            <h3>Our Mission</h3>
-            <p>AquiLLM developers are interested in being able to critically evaluate the performance of AquiLLM so that they can figure out how to improve it. In order to evaluate the responses however, the existing rating system needs to be completed and expanded upon to give developers more information to work with. This is step 1 in improving AquiLLM, and later steps in the coming months will include building a system to seamlessly integrate data from the astronomical instrument OSIRIS (OH-Suppressing Infrared Imaging Spectrograph), based in Hawaii.</p>
-        </div>
+                    <h3>Our Mission</h3>
+                    <p>AquiLLM developers are interested in being able to critically evaluate the performance of AquiLLM so that they can figure out how to improve it. In order to evaluate the responses however, the existing rating system needs to be completed and expanded upon to give developers more information to work with. This is step 1 in improving AquiLLM, and later steps in the coming months will include building a system to seamlessly integrate data from the astronomical instrument OSIRIS (OH-Suppressing Infrared Imaging Spectrograph), based in Hawaii.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -53,7 +69,7 @@
             <div class="footer-links">
                 <a href="https://github.com/AquiLLM/AquiLLM">GitHub</a>
             </div>
-            <p>&copy; OSIRIS AquiLLM Capstone 2026. Open-source RAG application for researchers.</p>
+            <p>&copy; 2026 AquiLLM. Open-source RAG application for researchers.</p>
         </div>
     </footer>
 </body>

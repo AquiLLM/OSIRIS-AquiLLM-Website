@@ -295,7 +295,7 @@ a:hover {
 .section-title {
     text-align: center;
     font-size: 3rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     color: #1C79D8;
     font-weight: normal;
 }
@@ -526,6 +526,19 @@ footer {
 
 .footer-links a:hover {
     color: #1C79D8;
+}
+
+/* About content */
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    color: #cccccc;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.about-content p {
+    margin-bottom: 2rem;
 }
 
 /* Problem/Background page styles */
