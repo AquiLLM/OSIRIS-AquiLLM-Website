@@ -1,3 +1,5 @@
+/* This CSS was taken from aquillm.org and modified for static website use and additional functionality */
+
 * {
     margin: 0;
     padding: 0;
@@ -47,6 +49,8 @@ ul ul {
 }
 
 .logo-container:hover {
+    transform: scale(1.1) translateY(-2px);
+    text-shadow: 0 0 8px #7daee0f8;
     text-decoration: none;
 }
 
@@ -66,6 +70,38 @@ ul ul {
     display: flex;
     list-style: none;
     gap: 2rem;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0.5rem;
+    gap: 0.4rem;
+    z-index: 100;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #eeeeee;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 .nav-links a {
@@ -99,31 +135,39 @@ a:hover {
 .hero {
     text-align: center;
     padding: 4rem 0;
-    background-color: #1a1a1a;
     position: relative;
 }
 
-.hero::before {
-    content: '';
+.hero-background {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('aquillm_logo.svg');
-    background-size: 450px 450px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    width: 450px;
+    height: 450px;
+    max-width: 100%;
+    max-height: 75%;
+    background: url('../images/aquillm_logo.svg');
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    filter: brightness(0.4) contrast(1.0);
+    filter: brightness(1) contrast(1);
+    opacity: 0.33;
     z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 .hero .container {
     position: relative;
-    z-index: 1;
+    z-index: 12;
 }
 
 .hero h1 {
+    position: relative;
     font-size: 4rem;
     margin-bottom: 1.5rem;
     color: #1C79D8;
@@ -132,6 +176,7 @@ a:hover {
 }
 
 .hero .subtitle {
+    position: relative;
     font-size: 1.8rem;
     margin-bottom: 2rem;
     color: #A5CCF3;
@@ -140,6 +185,7 @@ a:hover {
 }
 
 .hero p {
+    position: relative;
     font-size: 1.3rem;
     margin-bottom: 3rem;
     color: #cccccc;
@@ -249,31 +295,102 @@ a:hover {
 .section-title {
     text-align: center;
     font-size: 3rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     color: #1C79D8;
     font-weight: normal;
 }
 
-/* About content */
-.about-content {
-    max-width: 900px;
-    margin: 0 auto;
-    color: #cccccc;
-    font-size: 1.2rem;
-    line-height: 1.8;
-}
-
-.about-content p {
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
     margin-bottom: 2rem;
 }
 
-/* Ideas content (GSOC page) */
-.ideas-content {
-    max-width: 900px;
-    margin: 0 auto;
+.section-header h2 {
+    font-size: 2rem;
+    color: #1C79D8;
+    margin: 0;
+    flex: 1;
+}
+
+.dropdown-toggle {
+    background: none;
+    border: none;
+    color: #1C79D8;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    width: 40px;
+    height: 40px;
+}
+
+.dropdown-toggle::after {
+    content: '▼';
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-toggle[aria-expanded="false"]::after {
+    transform: rotate(-90deg);
+}
+
+.dropdown-toggle:hover {
+    color: #A5CCF3;
+}
+
+/* Tech grid */
+.tech-grid-container {
+    max-height: 10000px;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+    margin-bottom: 3rem;
+    padding-top: 1rem;
+}
+
+.tech-grid-container.collapsed {
+    max-height: 0;
+    opacity: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.tech-card {
+    background: rgba(68, 68, 68, 0.2);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #555555;
+    transition: all 0.3s;
+}
+
+.tech-card:hover {
+    transform: translateY(-3px);
+    border-color: #1C79D8;
+    box-shadow: 0 10px 30px rgba(28, 121, 216, 0.1);
+}
+
+.tech-card h3 {
+    color: #A5CCF3;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.tech-card p {
     color: #cccccc;
-    font-size: 1.2rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 /* Features grid */
@@ -411,8 +528,129 @@ footer {
     color: #1C79D8;
 }
 
-/* Capstone 2026 team cards */
-.team-grid {
+/* About content */
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    color: #cccccc;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.about-content p {
+    margin-bottom: 2rem;
+}
+
+/* Problem/Background page styles */
+.problem-section {
+    margin-bottom: 30px;
+    background: rgba(68, 68, 68, 0.2);
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 4px solid #1C79D8;
+    border: 1px solid #555555;
+    transition: all 0.3s ease;
+}
+
+.problem-section:hover {
+    transform: translateY(-3px);
+    border-color: #1C79D8;
+    box-shadow: 0 10px 30px rgba(28, 121, 216, 0.1);
+}
+
+.problem-section h2 {
+    font-size: 1.8rem;
+    color: #1C79D8;
+    margin-bottom: 1rem;
+}
+
+.problem-section h3 {
+    font-size: 1.3rem;
+    color: #A5CCF3;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.problem-section p {
+    font-size: 1.1rem;
+    color: #cccccc;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.client-info {
+    background: rgba(68, 68, 68, 0.2);
+    border: 1px solid #555555;
+    border-left: 4px solid #e88462;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.client-info:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(232, 132, 98, 0.1);
+    border-color: #e88462;
+}
+
+.client-info p {
+    color: #cccccc;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.client-info strong {
+    color: #ffffff;
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.centered-section {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.highlight-section {
+    border-left: 4px solid #e88462;
+}
+
+.highlight-section:hover {
+    border-color: #e88462;
+    box-shadow: 0 10px 30px rgba(232, 132, 98, 0.1);
+}
+
+.highlight-section h2 {
+    color: #e88462;
+}
+
+/* Team page */
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.page h1 {
+    font-size: 56px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.page .subtitle {
+    font-size: 20px;
+    color: #b8b8b8;
+    margin-bottom: 40px;
+}
+
+.grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
@@ -429,7 +667,7 @@ footer {
 
 .card:hover {
     transform: translateY(-3px);
-    border-color: #1C79D8;
+    border-color: #58a6ff;
 }
 
 .avatar {
@@ -454,17 +692,25 @@ footer {
     margin-bottom: 6px;
 }
 
+.role {
+    font-size: 16px;
+    color: #58a6ff;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
 .bio {
     color: #cfcfcf;
     font-size: 16px;
     line-height: 1.7;
 }
 
+/* Responsive */
 @media (max-width: 950px) {
-    .team-grid { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: 1fr; }
+    .page h1 { font-size: 44px; }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .hero::before {
         background-size: 300px 300px;
@@ -474,8 +720,34 @@ footer {
         font-size: 2.5rem;
     }
 
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        position: relative;
+    }
+
     .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(34, 34, 34, 0.95);
+        backdrop-filter: blur(10px);
+        gap: 1rem;
+        padding: 1.5rem;
+        list-style: none;
         display: none;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #444444;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
     }
 
     .cta-buttons {
@@ -499,6 +771,10 @@ footer {
     }
 
     .contributor-list {
+        grid-template-columns: 1fr;
+    }
+
+    .problem-grid {
         grid-template-columns: 1fr;
     }
 }
