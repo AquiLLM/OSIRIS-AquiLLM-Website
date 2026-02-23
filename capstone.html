@@ -12,12 +12,12 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/alpha-light.ico">
+    <link rel="icon" type="image/x-icon" href="images/alpha-light.ico">
 
     <title>Capstone 2026 - AquiLLM</title>
     <meta name="description" content="AquiLLM Capstone 2026 Team">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
@@ -28,6 +28,11 @@
                 </svg>
                 <div class="logo-text">AquiLLM</div>
             </a>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="index.html#team">Team</a></li>
@@ -96,5 +101,10 @@
             <p>&copy; 2025 AquiLLM Research Project</p>
         </div>
     </footer>
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

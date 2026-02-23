@@ -68,6 +68,25 @@ ul ul {
     gap: 2rem;
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0.5rem;
+    gap: 0.4rem;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #eeeeee;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
 .nav-links a {
     text-decoration: none;
     color: #eeeeee;
@@ -110,7 +129,7 @@ a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('aquillm_logo.svg');
+    background: url('../images/aquillm_logo.svg');
     background-size: 450px 450px;
     background-position: center;
     background-repeat: no-repeat;
@@ -358,6 +377,59 @@ a:hover {
     font-size: 0.9rem;
 }
 
+/* Team cards */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.card {
+    background: #222;
+    border: 1px solid #404040;
+    border-radius: 16px;
+    padding: 22px;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+    min-height: 320px;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: #1C79D8;
+}
+
+.avatar {
+    width: 84px;
+    height: 84px;
+    border-radius: 8px;
+    border: 2px solid #404040;
+    object-fit: cover;
+    margin-bottom: 16px;
+    background: #2d2d2d;
+    display: block;
+}
+
+.avatar-adjust {
+    object-position: 65% -5%;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.bio {
+    color: #cfcfcf;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+@media (max-width: 950px) {
+    .team-grid { grid-template-columns: 1fr; }
+}
+
 /* Figures */
 figure {
     margin: 2rem auto;
@@ -411,59 +483,6 @@ footer {
     color: #1C79D8;
 }
 
-/* Capstone 2026 team cards */
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
-
-.card {
-    background: #222;
-    border: 1px solid #404040;
-    border-radius: 16px;
-    padding: 22px;
-    transition: transform 0.15s ease, border-color 0.15s ease;
-    min-height: 320px;
-}
-
-.card:hover {
-    transform: translateY(-3px);
-    border-color: #1C79D8;
-}
-
-.avatar {
-    width: 84px;
-    height: 84px;
-    border-radius: 8px;
-    border: 2px solid #404040;
-    object-fit: cover;
-    margin-bottom: 16px;
-    background: #2d2d2d;
-    display: block;
-}
-
-.avatar-adjust {
-    object-position: 65% -5%;
-}
-
-.name {
-    font-size: 24px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 6px;
-}
-
-.bio {
-    color: #cfcfcf;
-    font-size: 16px;
-    line-height: 1.7;
-}
-
-@media (max-width: 950px) {
-    .team-grid { grid-template-columns: 1fr; }
-}
-
 /* Responsive */
 @media (max-width: 768px) {
     .hero::before {
@@ -474,8 +493,34 @@ footer {
         font-size: 2.5rem;
     }
 
+    .hamburger {
+        display: flex;
+    }
+
     .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(34, 34, 34, 0.95);
+        backdrop-filter: blur(10px);
+        gap: 1rem;
+        padding: 1.5rem;
+        list-style: none;
         display: none;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #444444;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    nav {
+        position: relative;
     }
 
     .cta-buttons {
