@@ -427,6 +427,30 @@ a:hover {
     line-height: 1.6;
 }
 
+/* About content */
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    color: #cccccc;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.about-content p {
+    margin-bottom: 2rem;
+}
+
+/* Team cards */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+@media (max-width: 950px) {
+    .team-grid { grid-template-columns: 1fr; }
+}
+
 /* Contributors */
 .contributors {
     max-width: 800px;
@@ -654,7 +678,7 @@ footer {
 
 .card:hover {
     transform: translateY(-3px);
-    border-color: #58a6ff;
+    border-color: #1C79D8;
 }
 
 .avatar {
