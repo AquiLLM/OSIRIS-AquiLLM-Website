@@ -345,6 +345,24 @@ a:hover {
     color: #A5CCF3;
 }
 
+.section-snippet {
+    color: #cccccc;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    max-height: 200px;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+    opacity: 1;
+}
+
+.section-snippet.hidden {
+    max-height: 0;
+    opacity: 0;
+    margin: 0;
+}
+
 /* Tech grid */
 .tech-grid-container {
     max-height: 10000px;
